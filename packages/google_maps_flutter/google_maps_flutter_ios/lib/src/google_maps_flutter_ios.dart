@@ -360,6 +360,7 @@ class GoogleMapsFlutterIOS extends GoogleMapsFlutterPlatform {
   Future<void> animateCamera(
     CameraUpdate cameraUpdate, {
     required int mapId,
+    Duration? animationDuration,
   }) {
     return _channel(mapId)
         .invokeMethod<void>('camera#animate', <String, Object>{
@@ -374,6 +375,7 @@ class GoogleMapsFlutterIOS extends GoogleMapsFlutterPlatform {
   }) {
     return _channel(mapId).invokeMethod<void>('camera#move', <String, dynamic>{
       'cameraUpdate': cameraUpdate.toJson(),
+      'animationDuration': animationDuration?.inMilliseconds,
     });
   }
 
