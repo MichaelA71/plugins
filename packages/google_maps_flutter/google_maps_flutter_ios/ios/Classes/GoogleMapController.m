@@ -185,7 +185,7 @@
     if (![animationDuration isKindOfClass:[NSNull class]]) {
       animationDuration = @([animationDuration floatValue] / 1000);
     }
-    [self CameraUpdate:ToCameraUpdate(call.arguments[@"cameraUpdate"])
+    [self animateWithCameraUpdate:ToCameraUpdate(call.arguments[@"cameraUpdate"])
                 animationDuration:animationDuration];
     result(nil);
   } else if ([call.method isEqualToString:@"camera#move"]) {
