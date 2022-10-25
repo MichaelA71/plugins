@@ -366,6 +366,7 @@ class GoogleMapsFlutterAndroid extends GoogleMapsFlutterPlatform {
     return _channel(mapId)
         .invokeMethod<void>('camera#animate', <String, Object>{
       'cameraUpdate': cameraUpdate.toJson(),
+      'animationDuration': animationDuration?.inMilliseconds,
     });
   }
 
